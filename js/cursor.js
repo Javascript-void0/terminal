@@ -9,4 +9,3 @@ setInterval(() => {
         cursor = true;
     }
 }, 500);
-

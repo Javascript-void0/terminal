@@ -1,7 +1,7 @@
 document.onkeydown = KeyPress;
 
 function KeyPress(e) {
-    console.log(e.keyCode)
+    // console.log(e.keyCode)
     before = document.getElementById('input').textContent;
     beforeAfterCursor = document.getElementById('input-after-cursor').textContent
     if (e.ctrlKey) {
@@ -64,29 +64,4 @@ function NewLine() {
     inputAfterCursor = document.createElement('span')
     header.append(inputAfterCursor)
     inputAfterCursor.setAttribute('id', 'input-after-cursor')
-}
-
-function RunCommand(text) {
-    console.log(text)
-    text = text.replace(' ', '')
-    if (text.length > 0) {
-        header = document.getElementById('lines')
-        header.append(document.createElement('br'))
-        if (text.toUpperCase() == 'HELP') {
-            lines = ['HELP           List the avaiable commands.',
-                     'GITHUB         Opens the Github Repository.',
-                     'ABOUT          About me.'
-                    ]
-            for (i = 0; i < lines.length; i++) {
-                temp = document.createElement('div')
-                header.append(temp)
-                htmlIn = lines[i].replaceAll(' ', '&nbsp')
-                console.log(htmlIn)
-                temp.innerHTML = htmlIn
-            }
-        } else {
-            header.append(`'${text}' is not a recognized command. Type 'help' for list of commands. `)
-            header.append(document.createElement('br'))
-        }
-    }
 }
