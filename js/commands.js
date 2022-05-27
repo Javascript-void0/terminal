@@ -105,7 +105,7 @@ function RunCommand(text) {
             case 'SYSTEMINFO':
                 lines = [' ',
                          'Host Name:                 Guest',
-                         'OS Name:                   Microsoft Windows 98',
+                         'OS Name:                   Microsoft Windows 95',
                          'OS Version:                4.1.10093 N/A Build 19928',
                          'OS Manufacturer:           Microsoft Corporation',
                          'OS Configuration:          Standalone Workstation',
