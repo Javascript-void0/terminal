@@ -1,0 +1,56 @@
+:root {
+    --background-color: #000;
+    --text-color: #fff;
+}
+
+@font-face {
+    font-family: Menlo;
+    src: url(Menlo-Regular.ttf)
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Menlo;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#header {
+    user-select: none;
+}
+
+*::selection {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+input {
+    background-color: var(--background-color);
+    border-color: var(--background-color);
+    color: var(--text-color);
+    width: calc(100vw - 125px);
+}
+
+input:focus {
+    outline: none;
+}
+
+#cursor {
+    font-weight: 900;
+}
+
+#input {
+    word-break: break-all;
+}
+
+#java {
+    position: absolute;
+    width: auto;
+    right: 0px;
+}
