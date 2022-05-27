@@ -36,6 +36,8 @@ function RunCommand(text) {
                           ['F', '#FFFFFF']]
                 if (typeof texts[1] === 'undefined') {
                     temp.remove()
+                    r.style.setProperty('--background-color', '#000')
+                    r.style.setProperty('--text-color', '#fff')
                     break
                 } else {
                     upperArg1 = texts[1].toUpperCase()
