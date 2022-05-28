@@ -1,5 +1,3 @@
-var echo = true;
-
 function RunCommand(text) {
     let texts = text.split(' ')
     for (i = 0; i < texts.length; i++) {
@@ -87,7 +85,11 @@ function RunCommand(text) {
                 header.append(`The current date is: ${day} ${today}`)
                 break
             case 'ECHO':
+                br = false
                 echo = text.slice(5)
+                if (echo.length != 0) {
+                    br = true
+                }
                 header.append(echo)
                 break
             case 'EXIT':
@@ -222,11 +224,12 @@ function RunCommand(text) {
 
                 header.append(`The current time is: ${hour}:${minute}:${second}.${millisecond}`)
             case 'TITLE':
-                if (typeof texts[1] === 'undefined') {
-                    temp.remove()
-                    return
+                title = text.slice(5)
+                if (title.length == 0) {
+                    br = true
+                } else {
+                    document.title = title
                 }
-                document.title = texts[1]
                 return
             case 'TREE':
                 lines = ['Folder PATH listing for volume Local Disk',
